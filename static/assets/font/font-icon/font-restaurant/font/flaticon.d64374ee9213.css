@@ -1,0 +1,71 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 14/05/2016 11:48
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.8b27bc96115c.eot");
+  src: url("./Flaticon.8b27bc96115c.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.3293616ec0c6.woff") format("woff"),
+       url("./Flaticon.dcb26c7239d8.ttf") format("truetype"),
+       url("./Flaticon.0a799148a50b.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.0a799148a50b.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-style: normal;
+}
+
+.flaticon-anchor:before { content: "\f100"; }
+.flaticon-anchor-1:before { content: "\f101"; }
+.flaticon-big-broccoli:before { content: "\f102"; }
+.flaticon-big-clam:before { content: "\f103"; }
+.flaticon-big-crab:before { content: "\f104"; }
+.flaticon-book:before { content: "\f105"; }
+.flaticon-clock:before { content: "\f106"; }
+.flaticon-cocktail:before { content: "\f107"; }
+.flaticon-cooker:before { content: "\f108"; }
+.flaticon-cupcake:before { content: "\f109"; }
+.flaticon-drink:before { content: "\f10a"; }
+.flaticon-ensalada-malaguena:before { content: "\f10b"; }
+.flaticon-fluffy-pancakes-with-syrup:before { content: "\f10c"; }
+.flaticon-food:before { content: "\f10d"; }
+.flaticon-food-10:before { content: "\f10e"; }
+.flaticon-food-11:before { content: "\f10f"; }
+.flaticon-food-2:before { content: "\f110"; }
+.flaticon-food-3:before { content: "\f111"; }
+.flaticon-food-4:before { content: "\f112"; }
+.flaticon-food-8:before { content: "\f113"; }
+.flaticon-food-9:before { content: "\f114"; }
+.flaticon-fried-shrimp:before { content: "\f115"; }
+.flaticon-glass:before { content: "\f116"; }
+.flaticon-hanged-canvas:before { content: "\f117"; }
+.flaticon-japanese-food:before { content: "\f118"; }
+.flaticon-lobster:before { content: "\f119"; }
+.flaticon-lobster-1:before { content: "\f11a"; }
+.flaticon-padnote:before { content: "\f11b"; }
+.flaticon-people:before { content: "\f11c"; }
+.flaticon-pizza:before { content: "\f11d"; }
+.flaticon-pizza-1:before { content: "\f11e"; }
+.flaticon-restaurant:before { content: "\f11f"; }
+.flaticon-restaurant-1:before { content: "\f120"; }
+.flaticon-salad:before { content: "\f121"; }
+.flaticon-sangria:before { content: "\f122"; }
+.flaticon-shop:before { content: "\f123"; }
+.flaticon-support:before { content: "\f124"; }
+.flaticon-sushi-and-chopsticks:before { content: "\f125"; }
+.flaticon-tapas:before { content: "\f126"; }
+.flaticon-time:before { content: "\f127"; }
+.flaticon-transport:before { content: "\f128"; }
+.flaticon-yemas-de-santa-teresa:before { content: "\f129"; }

@@ -1,0 +1,121 @@
+{% extends 'resto/index.html' %}
+
+{% block seo %}
+        <title>{{ index_page.title }} | About</title>
+        <meta name="description" content="{{ about.description }}">
+        <meta name="keywords" content="{{ about.keywords }}">
+{% endblock %}
+
+{% block menu %}
+     <ul class="nav-links nav navbar-nav">
+         <li><a href="/" class="main-menu"><span class="text">Αρχικη Σελιδα</span></a></li>
+         <li class="active"><a href="{% url 'about' %}" class="main-menu"><span class="text">Σχετικα με εμας</span></a></li>
+         <li><a href="{% url 'reservation' %}" class="main-menu"><span class="text">Reservation</span></a></li>
+         <li><a href="{% url 'menu' %}" class="main-menu"><span class="text">menu</span></a></li>
+         <li><a href="{% url 'blog' %}" class="main-menu"><span class="text">blog</span></a></li>
+         <li><a href="{% url 'contact' %}" class="main-menu"><span class="text">contact</span></a></li>
+     </ul>
+{% endblock %}
+{% block content %}
+    <!-- WRAPPER-->
+    <div id="wrapper-content">
+                    <!-- MAIN CONTENT-->
+                    <div class="main-contents">
+                        <section class="morepage-banner-wrapper about">
+                            <div class="container">
+                                <div class="morepage-banner">
+
+                                    <h2 class="title">Σχετικα με εμας</h2>
+                                    <ol class="breadcrumb">
+                                        <li><a href="/" class="link">Home</a></li>
+                                        <li class="active"><a href="{% url 'about' %}" class="link">Σχετικά με εμάς</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="about-us-2 padding-top-100">
+                            <div class="container">
+                                <div class="main-title-2">
+                                    <div class="icons">//</div>
+                                    <h2 class="title">{{ about.title }}</h2></div>
+                                <div style="height: 600px" class="left-infomation">
+                                    <div class="content-wrapper padding-bottom-100">
+                                        <div class="main-content">
+                                            {{ about.text|safe }}
+                                            <div class="row group-list">
+                                                {% for service in services %}
+                                                <div class="col-xs-6">
+                                                    <div class="media box-media">
+                                                        <div class="media-left"><a href="#" class="icons"><i class="{{ service.icon }}"></i></a></div>
+                                                        <div class="media-right"><a href="#" class="title">{{ service.title }}</a>
+                                                            {{ service.text|safe }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  data-wow-delay="0.2s" class="right-image wow fadeInRight">
+                                    <img style="background-size: cover; height: 600px"  src="{{ about.image.url }}" alt="{{ about.title }}" class="img-responsive">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="banner banner-infomation-slide style-2 padding-top-100 padding-bottom-100">
+                            <div class="container">
+                                <div class="main-title-2 white">
+                                    <div class="icons">//</div>
+                                    <h2 class="title">Εδω θα βρειτε</h2></div>
+                                <div class="list-infomation">
+                                    {% for about_banner in banner %}
+                                    <div class="infomation-item"><i class="fa {{ about_banner.icon }} fa-5x" aria-hidden="true"></i>
+                                        <h4 class="title">{{ about_banner.title }}</h4>
+                                        <p class="description">{{ about_banner.text }}</p>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </section>
+                        <section class="our-chefs padding-top-100 padding-bottom-100">
+                            <div class="container">
+                                <div class="main-title-2">
+                                    <div class="icons">//</div>
+                                    <h2 class="title">Το προσωπικό μας</h2></div>
+                                <div class="main-content">
+                                    <div class="our-chefs-list">
+                                        {% for person in staff %}
+                                        <div class="chef-item">
+                                            <a href="#" class="our-chef-avatar"><img src="{{ person.icon.url }}" alt="{{ person.title }}" class="img-responsive"></a>
+                                            <div class="our-chef-info"><a href="" class="name">{{ person.title }}</a>
+                                                <p class="job">{{ person.occupation }}</p>
+                                                <p class="description">{{ person.text }}</p>
+                                                <div class="our-chef-socials"><a href="#" class="link facebook"><i class="fa fa-facebook"></i></a><a href="#" class="link twitter"><i class="fa fa-twitter"></i></a><a href="#" class="link google"><i class="fa fa-google-plus"></i></a></div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="subscribe-email">
+                            <div class="container">
+                                <div class="subscribe-email-wrapper">
+                                    <div class="subscribe-email-left">
+                                        <p class="subscribe-email-title">Check how all the dishes are cooked today!</p>
+                                        <p class="subscribe-email-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
+                                    </div>
+                                    <div class="subscribe-email-right">
+                                        <form>
+                                            <div class="input-group form-subscribe-email"><input type="text" placeholder="Type Your Email" class="form-control"><span class="input-group-btn"><button type="submit" class="btn-email">Get Offer</button></span></div>
+                                        </form>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock %}
+

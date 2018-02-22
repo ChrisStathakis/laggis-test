@@ -1,0 +1,118 @@
+{% extends 'resto/index.html' %}
+
+{% block seo %}
+     <title>{{ index_page.title }} | {{ object.title }}</title>
+     <meta name="description" content="{{ blog_info.description }}">
+     <meta name="keywords" content="{{ blog_info.keywords }}">
+{% endblock %}
+{% block menu %}
+    <ul class="nav-links nav navbar-nav">
+        <li><a href="/" class="main-menu"><span class="text">Αρχικη Σελιδα</span></a></li>
+        <li><a href="{% url 'menu' %}" class="main-menu"><span class="text">menu</span></a></li>
+        <!--<li><a href="{% url 'about' %}" class="main-menu"><span class="text">Σχετικα με εμας</span></a></li> -->
+        <li><a href="{% url 'reservation' %}" class="main-menu"><span class="text">Reservation</span></a></li>
+        <li class="active"><a href="{% url 'blog' %}" class="main-menu"><span class="text">blog</span></a></li>
+        <li><a href="{% url 'contact' %}" class="main-menu"><span class="text">contact</span></a></li>
+    </ul>
+{% endblock %}
+{% block content %}
+
+<!-- WRAPPER-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/el_GR/sdk.js#xfbml=1&version=v2.9&appId=399000140475673";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+                <div id="wrapper-content">
+                    <!-- MAIN CONTENT-->
+                    <div class="main-contents">
+                        <section class="morepage-banner-wrapper blog-detail">
+                            <div class="container">
+                                <div class="morepage-banner">
+                                    <h2 class="title">{{ object.title }}</h2>
+                                    <ol class="breadcrumb">
+                                        <li><a href="{% url 'homepage' %}" class="link">Home</a></li>
+                                        <li><a href="{% url 'blog' %}" class="link">blog</a></li>
+                                        <li class="active"><a href="" class="link">{{ object.title }}</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="page-main padding-top-100 padding-bottom-100">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8 col-xs-12 main-left blog-detail-wrapper">
+                                        <div class="blog-post">
+                                            <div class="blog-image"><img src="{{ object.image.url }}" alt="{{ object.title }}" class="img-responsive"></div>
+                                            <div class="blog-content">
+                                                <div class="blog-detail-content">
+                                                    <div class="dates">
+                                                        <div class="day">{{ object.updated.day }}</div>
+                                                        <div class="month-year">{{ object.updated.month }}-{{ object.updated.year }}</div>
+                                                    </div>
+                                                    <div class="content"><a href="#" class="title">{{ object.title }}</a>
+                                                        <div class="info">
+                                                            <div class="item tag"><a href="#" class="link">Κατηγορία</a><a href="#" class="link">{{ object.category }}</a></div>
+                                                            <div class="item date"> <i class="fa fa-calendar-o"></i><span>Δημοσιεύτηκε{{ object.publish }}</span></div>
+                                                        </div>
+                                                        <div class="description">
+                                                            {{ object.content|safe }}
+                                                            <div class="tags">
+                                                                <div class="title">tags</div>
+                                                                <ul class="list-inline list-tag">
+                                                                    {% for tag in object.tags.all %}
+                                                                    <li>
+                                                                        <a href="#" class="name">{{ tag.title }}</a>
+                                                                    </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="blog-comment margin-top-70">
+                                                <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                                                <div class="main-title-2">
+                                                    <div class="icons">//</div>
+                                                    <h2 class="title">Σχολια</h2></div>
+                                                <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-12 sidebar">
+
+                                        <div class="col-2">
+                                            <div class="recent-post-widget widget">
+                                                <div class="title-widget">RECENT POST</div>
+                                                <div class="content-widget">
+                                                    <div class="recent-post-list">
+                                                        {% for posts in recent_posts %}
+                                                        <div class="single-recent-post-widget">
+                                                            <a href="{% url 'blog_detail' posts.slug %}" class="thumb img-wrapper">
+                                                                <img src="{{ posts.image.url }}" alt="{{ posts.title }}" class="img-responsive">
+                                                            </a>
+                                                            <div class="post-info">
+                                                                <div class="meta-info">
+                                                                    <span>{{ posts.updated|date }}</span><span class="sep">/ {{ posts.category }}</span>
+                                                                </div>
+                                                                <div class="description">{{ posts.title }}</div>
+                                                            </div>
+                                                        </div>
+                                                        {% endfor %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'resto/index.html' %}
+{% block seo %}
+
+{% endblock %}
+{% block content %}
+    <div id="wrapper-content">
+        <!-- MAIN CONTENT-->
+        <div class="main-contents">
+            <section class="morepage-banner-wrapper menu-gird-2">
+                <div class="container">
+                    <div class="morepage-banner">
+                        <h2 class="title">Το menu μας</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="/l" class="link">Home</a></li>
+                            <li class="active"><a href="{% url 'menu' %}" class="link">Menu</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section class="page-main padding-top-100 padding-bottom-100">
+                <div class="container">
+                    {% for category in recipe_categories %}
+                    <div class="meal-wrapper padding-bottom-100">
+                        <div class="main-title-2">
+                            <div class="icons">//</div>
+                            <h2 class="title">{{ category.title }}</h2></div>
+                        <div class="main-content">
+                            <div class="more-image"><img height="100px" width="200px" src="{{ category.image.url }}" alt="" class="img-responsive"></div>
+                            <p class="description-menu">{{ category.text }}</p>
+                            <div class="row">
+                                {% for recipe in recipe_list %}
+                                    {% if recipe.category == category  %}
+                                        <div class="col-md-6">
+                                            <div class="menu-items style-2">
+                                                <a href="#" class="item-image"><img src="{{ recipe.image.url }}" alt="" class="img-responsive"></a>
+                                                <div class="item-content">
+                                                    <a href="#" class="title">
+                                                        <div class="name">{{ recipe.title }}</div>
+                                                        <div class="price"><sup>{{ currency }}</sup><span>{{ recipe.price }}</span></div>
+                                                    </a>
+                                                    <div class="desciption">{{ recipe.text }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                </section>
+
+            </div>
+        </div>
+{% endblock %}

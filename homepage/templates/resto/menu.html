@@ -1,0 +1,124 @@
+{% extends 'resto/index.html' %}
+{% load staticfiles %}
+
+{% block seo %}
+     <title>{{ index_page.title }} | {{ menu_info.title }}</title>
+     <meta name="description" content="{{ menu_info.description }}">
+     <meta name="keywords" content="{{ index_page.seo_keywords }}, {{ menu_info.keywords }}">
+{% endblock %}
+
+{% block menu %}
+     <ul class="nav-links nav navbar-nav">
+         <li><a href="/" class="main-menu"><span class="text">Αρχικη Σελιδα</span></a></li>
+         <li class="active"><a href="{% url 'menu' %}" class="main-menu"><span class="text">menu</span></a></li>
+         <!--<li><a href="{% url 'about' %}" class="main-menu"><span class="text">Σχετικα με εμας</span></a></li> -->
+         <li><a href="{% url 'reservation' %}" class="main-menu"><span class="text">Reservation</span></a></li>
+         <li><a href="{% url 'blog' %}" class="main-menu"><span class="text">blog</span></a></li>
+         <li><a href="{% url 'contact' %}" class="main-menu"><span class="text">contact</span></a></li>
+     </ul>
+{% endblock %}
+{% block additional_css %}
+    <link rel="stylesheet" href="{% static 'lightbox2-master/dist/css/lightbox.min.css' %}">
+    <style>
+     .homepage-default {
+         {% if menu_info.image %}
+             background-image: url({{ menu_info.image.url }});
+         {% else %}
+             background-image: url({% static 'images/diamantis/resever_home.jpg' %});
+         {% endif %}
+     }
+     .open-hours-bg {
+            position: relative;
+            width: 470px;
+            text-align: center;
+            color: #ffffff;
+            background-image: url('{{ menu_info.catalogue.url }}');
+            background-position: center;
+            background-size: cover;
+        }
+    .modal-open {
+        overflow:visible;
+    }
+ </style>
+{% endblock %}
+
+{% block additional_js %}
+    <script src="{% static 'lightbox2-master/dist/js/lightbox.min.js' %}"></script>
+{% endblock %}
+ {% block content %}
+     <div id="wrapper-content">
+    <!-- MAIN CONTENT-->
+         <div class="main-contents">
+             <section class="homepage-banner homepage-default">
+                 <div class="container">
+                     <div style="margin-top: 30%" class="morepage-banner">
+                         <h2 class="title">Το Μενού μας</h2>
+                         <ol class="breadcrumb">
+                             <li><a href="{% url 'homepage' %}" class="link">Home</a></li>
+                             <li class="active"><a href="{% url 'menu' %}" class="link">Menu</a></li>
+                         </ol>
+                     </div>
+                 </div>
+             </section>
+             <section class="coming-soon">
+                 <div class="container">
+                     <div class="coming-soon-wrapper">
+                         <div class="left-infomation">
+                             <div class="open-hours-bg">
+                                 <div class="open-hours-wrapper">
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="right-infomation">
+                             <div class="coming-soon-event-wrapper padding-top-100 padding-bottom-100">
+                                 <div class="main-title">
+                                            <div class="bg-image"><img src="{% static 'images/diamantis/shrimp.png' %}" alt="" class="shrimp"></div>
+                                            <h2 class="title">Δείτε το καταλογό μας.</h2></div>
+                                 <div class="main-content">
+                                     <div class="infomation">
+                                         <h4 class="title">{{ announcements.title }}</h4>
+                                         <p class="date">{{ announcements.publish|date }}</p>
+                                     </div>
+                                     <a href="{{ menu_info.catalogue.url }}" data-lightbox="{{ menu_info.catalogue.url }}" type="button" class="btn btn-maincolor" >Κατάλογος</a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+             </section>
+             {% for category in recipe_categories %}
+                 <section class="banner banner-deserts padding-top-100 padding-bottom-100">
+                    <div class="container">
+                        <div class="main-title-2 white no-margin">
+                            <div class="icons">//</div>
+                            <h2 class="title">{{ category }}</h2></div>
+                    </div>
+                 </section>
+                 <div class="sub-menu padding-top-100 padding-bottom-100">
+                     <div class="container">
+                        <div class="row">
+                            {% for recipe in recipe_list %}
+                                {% if recipe.category == category %}
+                                    <div class="col-sm-6">
+                                        <div class="menu-items style-3">
+                                            <a class="item"  href="{% url 'menu_detail' recipe.slug %}">
+                                                <img style="display: block;max-width:300px;max-height:200px;width: auto;height: auto;"  src="{{ recipe.image.url }}" alt="{{ recipe.title }}"  class="img-responsive">
+                                            </a>
+                                            <div class="item-content">
+                                                <a href="{% url 'menu_detail' recipe.slug %}" class="title">
+                                                    <div class="name">{{ recipe.title }}</div>
+                                                </a>
+                                                <div class="desciption">{{ recipe.text|safe|truncatewords:30 }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+             {% endfor %}
+         </div>
+     </div>
+{% endblock %}
+

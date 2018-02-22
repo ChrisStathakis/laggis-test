@@ -1,0 +1,134 @@
+{% extends 'resto/index.html' %} {% load staticfiles %}
+
+{% block seo %}
+     <title>{{ index_page.title }} | Επικοινωνία</title>
+     <meta name="description" content="{{ index_page.seo_description }}">
+     <meta name="keywords" content="{{ index_page.seo_keywords }}">
+{% endblock %}
+
+{% block menu %}
+    <ul class="nav-links nav navbar-nav">
+        <li><a href="/" class="main-menu"><span class="text">Αρχικη Σελιδα</span></a></li>
+        <li><a href="{% url 'menu' %}" class="main-menu"><span class="text">menu</span></a></li>
+        <!--<li><a href="{% url 'about' %}" class="main-menu"><span class="text">Σχετικα με εμας</span></a></li> -->
+        <li><a href="{% url 'reservation' %}" class="main-menu"><span class="text">Reservation</span></a></li>
+        <li><a href="{% url 'blog' %}" class="main-menu"><span class="text">blog</span></a></li>
+        <li class="active"><a href="{% url 'contact' %}" class="main-menu"><span class="text">contact</span></a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div id="wrapper-content">
+                    <!-- MAIN CONTENT-->
+                    <div class="main-contents">
+                        <section class="morepage-banner-wrapper contact">
+                            <div class="container">
+                                <div class="morepage-banner">
+                                    <h2 class="title">Επικοινωνίστε μαζί μας</h2>
+                                    <ol class="breadcrumb">
+                                        <li><a href="/" class="link">Αρχική Σελίδα</a></li>
+                                        <li class="active"><a href="{% url 'contact' %}" class="link">Επικοινωνία</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="page-main padding-top-100 padding-bottom-100">
+                            <div class="container">
+                                <div class="main-title-2">
+                                    <div class="icons">//</div>
+                                    <h2 class="title">ειμαστε εδω για εσας</h2></div>
+                                <div class="main-content">
+                                    <div class="row contact-info">
+                                        <div class="col-sm-4 col-xs-12">
+                                            <div class="contact-info-item"><i class="fa fa-clock-o fa-5x" aria-hidden="true"></i>
+                                                <p class="title">{{ contact_info.open_time_title }}</p>
+                                                {% for hour in open_hours %}
+                                                <p class="text">{{ hour.title }}</p>
+                                                <p class="text">{{ hour.open }} - {{ hour.close }}</p>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12">
+                                            <div class="contact-info-item"><i class="fa fa-address-card fa-5x" aria-hidden="true"></i>
+                                                <p class="title">{{ contact_info.address }}</p>
+                                                {{ contact_info.address_text|safe }}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12">
+                                            <div class="contact-info-item"><i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+                                                <p class="title">{{ contact_info.support }}</p>
+                                                {{ contact_info.support_text|safe }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="contact-form-wrapper padding-top-100 padding-bottom-100">
+                            <div class="container">
+                                <div class="main-title-2">
+                                    <div class="icons">//</div>
+                                    <h2 class="title">Ρωτήστε μας!</h2></div>
+                                <div class="main-content">
+                                    <form  method="post"  class="contact-form">{% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="form-group"><input  name="name" id="name" type="text" placeholder="Your Name" onfocus="this.placeholder = ''" required="required" data-validation-required-message="Please enter your name." class="form-control" >
+                                                    <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group"><input name="email" id="email" type="email" placeholder="Your Email" onfocus="this.placeholder = ''" required="required" data-validation-required-message="Please enter your email address." class="form-control">
+                                                    <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group"><input name="phone" id="phone" type="text" placeholder="Your Phone" onfocus="this.placeholder = ''" data-validation-required-message="Please enter your phone number." class="form-control">
+                                                    <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group"><textarea name="message" id="message" placeholder="Your Message" onfocus="this.placeholder = ''" required="required" data-validation-required-message="Please enter a message." class="form-control form-textarea"></textarea>
+                                                    <p
+                                                        class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="success" class="margin-top-50"></div>
+                                        <button type="submit" class="btn btn-maincolor">Send Message </button>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div style="margin-top: 2%" id="my_message">
+                                {% if messages %}
+                                    <ul class="messages">
+                                        {% for message in messages %}
+                                        <li{% if message.tags %} class="alert alert-success"{% endif %}>
+                                            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                                            {{ message }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </section>
+                        <div class="contact-map">
+                            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Sparti, GR, &t=&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="http://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{overflow:hidden;height:500px;width:600px;}.gmap_canvas {background:none!important;height:500px;width:600px;}</style></div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock  %}
+
+
+
+
+{% block additional_js %}
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="{% static 'assets/js/pages/contact.js' %}"></script>
+<script src="{%  static 'assets/libs/mail/contact_me.js' %}"></script>
+<script src="{%  static 'assets/libs/mail/jqBootstrapValidation.js' %}"></script>
+{% endblock %}

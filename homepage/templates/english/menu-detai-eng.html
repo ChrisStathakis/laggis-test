@@ -1,0 +1,100 @@
+{% extends 'english/index-en.html' %}
+
+{% block seo %}
+     <title>{{ index_page.title_eng }} | {{ object.title_eng }}</title>
+     <meta name="description" content="{{ object.description_eng }}">
+     <meta name="keywords" content="{{ object.keywords_eng }}">
+{% endblock %}
+
+{% block menu %}
+     <ul class="nav-links nav navbar-nav">
+         <li><a href="{% url 'homepage_eng' %}" class="main-menu"><span class="text">Homepage</span></a></li>
+         <li class="active"><a href="{% url 'menu_eng' %}" class="main-menu"><span class="text">menu</span></a></li>
+         <!--<li><a href="{% url 'about_eng' %}" class="main-menu"><span class="text">About</span></a></li> -->
+         <li><a href="{% url 'reservation_eng' %}" class="main-menu"><span class="text">Reservation</span></a></li>
+         <li><a href="{% url 'blog_eng' %}" class="main-menu"><span class="text">blog</span></a></li>
+         <li><a href="{% url 'contact_eng' %}" class="main-menu"><span class="text">contact</span></a></li>
+     </ul>
+{% endblock %}
+
+{% block content %}
+                <div id="wrapper-content">
+                    <!-- MAIN CONTENT-->
+                    <div class="main-contents">
+                        <section class="morepage-banner-wrapper blog-detail">
+                            <div class="container">
+                                <div class="morepage-banner">
+
+                                    <h2 class="title">{{ object.title_eng }}</h2>
+                                    <ol class="breadcrumb">
+                                        <li><a href="{% url 'homepage_eng' %}" class="link">Home</a></li>
+                                        <li><a href="{% url 'menu_eng' %}" class="link">Menu</a></li>
+                                        <li class="active"><a href="{% url 'menu_detail_eng' object.slug %}" class="link">{{ object.title_eng }}</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="page-main padding-top-100 padding-bottom-100">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8 col-xs-12 main-left blog-detail-wrapper">
+                                        <div class="blog-post">
+                                            <div class="blog-image"><img src="{{ object.image.url }}" alt="{{ object.title_eng }}" class="img-responsive"></div>
+                                            <div class="blog-content">
+                                                <div class="blog-detail-content">
+                                                    <div class="dates">
+                                                        <div class="day">{{ object.updated.day }}</div>
+                                                        <div class="month-year">{{ object.updated.month }}-{{ object.updated.year }}</div>
+                                                    </div>
+                                                    <div class="content"><a href="#" class="title">{{ object.title_eng }}</a>
+                                                        <div class="info">
+                                                            <div class="item tag"><a href="#" class="link">Category</a><a href="#" class="link">{{ object.category.title_eng }}</a></div>
+                                                        </div>
+                                                        <div class="description">
+                                                            {{ object.text_eng|safe }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% if recipe.black_image %}
+                                            <div>
+                                            <img width="200" height="200" src="{{ recipe.black_image.url }}" alt="{{ recipe.title }}">
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-4 col-xs-12 sidebar">
+
+                                        <div class="col-2">
+                                            <div class="recent-post-widget widget">
+                                                <div class="title-widget">More Recipes</div>
+                                                <div class="content-widget">
+                                                    <div class="recent-post-list">
+                                                        {% for recipe in recipes %}
+                                                        <div class="single-recent-post-widget">
+                                                            <a href="{% url 'menu_detail_eng' recipe.slug %}" class="thumb img-wrapper">
+                                                                <img src="{{ recipe.image.url }}" alt="{{ recipe.title_eng }}" class="img-responsive">
+                                                            </a>
+                                                            <div class="post-info">
+                                                                <div class="meta-info">
+                                                                    <span>{{ recipe.updated|date }}</span><span class="sep">/ {{ recipe.title_eng }}</span>
+                                                                </div>
+                                                                <div class="description"></div>
+                                                            </div>
+                                                        </div>
+                                                        {% endfor %}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+{% endblock %}

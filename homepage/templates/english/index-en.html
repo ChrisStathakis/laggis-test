@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+     {% load static from staticfiles %}
+    <head>
+        {% block seo %}
+        <title>{{ title }}</title>
+        <meta name="description" content="{{ seo_description }}">
+        <meta name="keywords" content="{{ seo_keywords }}">
+        {% endblock %}
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'resto/include_hmtl/css_files.html' %}
+        {% block additional_css %}
+        <style>
+        .book-table.style-1 .left-image {
+            background-image: url("{% static 'images/diamantis/resever_home.jpg' %}");
+        }
+
+        {% if index_page.menu_image %}
+               .homepage-default {
+                    text-align: left;
+                    color: #e3e3e3;
+                    background-image: url('{{ index_page.menu_image.url }}');
+                    background-attachment: fixed;
+                }
+        {% else %}
+
+        {% endif %}
+        {% if index_page.about_image %}
+                .about-us-1 .left-image {
+                    position: relative;
+                    overflow: hidden;
+                    width: 45%;
+                    background-color: #121212;
+                    background-image: url('{{ index_page.about_image.url }}');
+                    background-position: center;
+                    background-size: cover;
+                }
+        {% else %}
+
+        {% endif %}
+
+        </style>
+        {% endblock %}
+         <style>
+            {% if index_page.color_menu_li %}
+            .navigation .nav-links li.active .main-menu, .navigation .nav-links li:hover .main-menu {
+                color: {{ index_page.color_menu_li }};
+            }
+            {% endif %}
+            {% if index_page.color_menu_hover %}
+                .mb-nav .main-menu {
+                    color: {{ index_page.color_menu_hover }};
+                }
+                .header-topbar .link {
+                    color: {{ index_page.color_menu_hover }};
+            }
+            .navigation .nav-links .main-menu {
+                color: {{ index_page.color_menu_hover }};
+                background-color: transparent;
+            }
+            {% endif %}
+        </style>
+    </head>
+
+    <body>
+        <!--BEGIN PAGE LOADER-->
+        <div class="body-wrapper">
+            {% block mobile_menu %}
+            <!-- MENU MOBILE BACKGROUND-->
+            <div class="wrapper-menu-mobile-background"></div>
+            <!-- MENU MOBILE-->
+            <div class="wrapper-menu-mobile">
+                <div class="mb-social-wrapper">
+                    <div class="mb-socials"><a href="{% url 'homepage' %}" class="link">Greek</a></div>
+                    <div class="mb-button-close"><i class="icons fa fa-times"></i></div>
+                    <div class="clearfix"></div>
+                </div>
+                <ul class="nav navbar-nav mb-nav">
+                    <li class="active"><a href="{% url 'homepage_eng' %}" class="main-menu"><span class="text">Homepage</span></a></li>
+                    <li><a href="{% url 'menu_eng' %}" class="main-menu"><span class="text">menu</span></a></li>
+                    <!--<li><a href="{% url 'about_eng' %}" class="main-menu"><span class="text">About</span></a></li> -->
+                    <li><a href="{% url 'reservation_eng' %}" class="main-menu"><span class="text">Reservation</span></a></li>
+                    <li><a href="{% url 'blog_eng' %}" class="main-menu"><span class="text">blog</span></a></li>
+                    <li><a href="{% url 'contact_eng' %}" class="main-menu"><span class="text">contact</span></a></li>
+                </ul>
+            </div>
+            {% endblock %}
+            <!-- WRAPPER CONTENT-->
+            <div class="wrapper-content">
+                <!-- HEADER-->
+                <header>
+                    <div class="bg-transparent">
+                        <div class="header-topbar">
+                            <div class="container">
+                                <ul class="topbar-left list-unstyled pull-left">
+                                    <li>
+                                        <a href="{% url 'homepage' %}" class="link"> <i class="icons fa fa-circle"></i><span>Greek</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="link"> <i class="icons fa fa-circle"></i><span>Phone 2732023849</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="link"> <i class="icons-2 fa fa-clock-o"></i><span>Support from 12:00- 24:00</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header-main">
+                            <div class="container">
+                                <div class="header-main-wrapper">
+                                    <div class="hamburger-menu-mobile"><i class="icons fa fa-bars"></i></div>
+                                    <div class="logo-wrapper">
+                                        <a href="/" class="logo"><img src="{% static 'images/diamantis/diamantis_logo.png' %}" alt="{{ index_page.title }}" /></a>
+                                    </div>
+                                    <nav class="navigation">
+                                        {% block menu %}
+                                        <ul class="nav-links nav navbar-nav">
+                                            <li class="active"><a href="{% url 'homepage_eng' %}" class="main-menu"><span class="text">Homepage</span></a></li>
+                                            <!--<li><a href="{% url 'about_eng' %}" class="main-menu"><span class="text">About</span></a></li> -->
+                                            <li><a href="{% url 'menu_eng' %}" class="main-menu"><span class="text">menu</span></a></li>
+                                            <li><a href="{% url 'reservation_eng' %}" class="main-menu"><span class="text">Reservation</span></a></li>
+                                            <li><a href="{% url 'blog_eng' %}" class="main-menu"><span class="text">blog</span></a></li>
+                                            <li><a href="{% url 'contact_eng' %}" class="main-menu"><span class="text">contact</span></a></li>
+                                        </ul>
+                                        {% endblock %}
+                                    </nav>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                {% block content %}
+                <!-- WRAPPER-->
+                <div id="wrapper-content">
+                    <!-- MAIN CONTENT-->
+                    <div class="main-contents">
+                        <section class="homepage-banner homepage-default">
+                            <div class="container">
+                                <div class="homepage-banner-warpper">
+                                    <div class="homepage-banner-content">
+                                        <div data-wow-delay="0.5s" class="group-title wow fadeInRight">
+                                            <h1 class="title">{{ index_page.title_eng }}</h1>
+                                            <p class="text">{{ index_page.describe_eng }}</p>
+                                        </div>
+                                        <div data-wow-delay="1s" class="group-open-hours wow fadeInRight">
+                                            <h5 class="title">We are open</h5>
+                                            {% for hour in open_hours %}
+                                            <div class="time-{{ forloop.counter }}">
+                                                <div class="day">{{ hour.title_eng }}</div>
+                                                <div class="time">{{ hour.open }} - {{ hour.close }}</div>
+                                            </div>
+                                            {% endfor %}
+
+                                        </div>
+                                        <div data-wow-delay="1.8s" class="group-btn wow fadeInUp"><a href="{% url 'reservation_eng' %}" class="btn btn-left btn-maincolor">Resever now!</a>
+                                            <a href="{% url 'menu_eng' %}" class="btn btn-right btn-transparent"> See our menu</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="about-us-1">
+                            <div class="left-image">
+                                <div class="homepage-hero-module">
+
+                                </div>
+                            </div>
+                            <div class="right-infomation">
+                                <div class="content-wrapper padding-top-100 padding-bottom-100">
+                                    <div class="main-title">
+                                        <div class="bg-image"><img src="{% static 'images/diamantis/crawfish.png' %}" alt="{{ index_page.title }}" class="crawfish"></div>
+                                        <h2 class="title">about us</h2></div>
+                                    <div class="main-content">
+                                        {{ index_page.about_us_eng|safe }}
+                                        <div class="signature"><img src="{% static 'images/diamantis/sign.png' %}" alt="{{ index_page.title }}" class="image-sign">
+                                            <p class="name">Eleni Laggi - Kostas Laggis</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="special-menu style-1 padding-top-100 padding-bottom-100">
+                            <div class="container">
+                                <div class="main-title">
+                                    <img src="{% static 'images/diamantis/clamp-2.png' %}" alt="{{ index_page.title }}" class="clamp">
+                                    <h2 class="title">special menu</h2>
+                                </div>
+                                <div class="main-content">
+                                    <div class="list-dish">
+                                        {% for item in recipes_special %}
+                                        <div class="dish">
+                                            <div class="box">
+                                                <div class="wrapper">
+                                                    <h5 class="name">{{ item.title_eng }}</h5>
+                                                    <div style="margin-top: 10%" class="image-dish">
+                                                        {% if item.image %}
+                                                            <a href="{% url 'menu_detail_eng' item.slug %}"><img height="150" width="150" src="{{ item.image.url }}" alt="{{ item.title }}" class="image-1"></a>
+                                                        {% endif %}
+                                                        {% if item.black_image %}
+                                                            <a href="{% url 'menu_detail' item.slug %}"><img height="150" width="150" src="{{ item.black_image.url }}" alt="{{ item.title }}" class="image-2"></a>
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="prices-wrapper">
+                                                        <div class="prices"><span>{{ item.text_eng|safe|truncatewords_html:5 }}</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="coming-soon">
+                        <div class="container">
+                            <div class="coming-soon-wrapper">
+                                <div class="left-infomation">
+                                    <div class="open-hours-bg">
+                                        <div class="open-hours-wrapper">
+                                            <div class="title">opening hour</div>
+                                            <div class="content">
+                                                {% for time in table_open_time %}
+                                                    <div class="item">
+                                                        <p class="day">{{ time.title }}</p>
+                                                        <p class="time">{{ time.times|safe }}</p>
+                                                    </div>
+                                                {% endfor %}
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right-infomation">
+                                    <div class="coming-soon-event-wrapper padding-top-100 padding-bottom-100">
+                                        <div class="main-title">
+                                            <div class="bg-image"><img src="{% static 'images/diamantis/shrimp.png' %}" alt="" class="shrimp"></div>
+                                            <h2 class="title">upcoming event</h2></div>
+                                        <div class="main-content">
+                                            {% if announcements %}
+                                            <div class="infomation">
+                                                <h4 class="title">{{ announcements.title_eng }}</h4>
+                                                <p class="date">{{ announcements.updated|date }}</p>
+                                            </div>
+                                            {% else %}
+                                            <div class="infomation">
+                                                <h4 class="title">No Event</h4>
+                                                <p class="date">At this moment we dont have any active event </p>
+                                            </div>
+                                            {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                        <section class="banner-prallax">
+                            <h1 class="title-bg"> <span data-parallax="{&quot;z&quot;: -500}">The </span><span data-parallax="{&quot;z&quot;: -450}">true </span><span data-parallax="{&quot;z&quot;: -375}">taste </span><span data-parallax="{&quot;z&quot;: -290}">of </span><span data-parallax="{&quot;z&quot;: -200}">Gamba</span></h1>
+                            <div data-parallax="{&quot;y&quot;: -120}" class="infomation-wrapper">
+                                <h2 class="title">{{ banner.title_eng }}</h2>
+                                <p class="description">{{ banner.text_eng }}</p><a href="{% url 'contact_eng' %}" class="btn btn-subcolor">Ask Us</a></div>
+                            <div
+                                data-parallax="{&quot;y&quot;: 100, &quot;z&quot;: -200}" class="img-wrapper"><img src="{% static 'images/diamantis/item-fish.png' %}" alt="{{ banner.title_eng }}" class="img-responsive"></div>
+                    <div data-parallax="{&quot;x&quot;: 1920, &quot;distance&quot;: 0, &quot;smoothness&quot;: 800}" class="img-wrapper-2"><img src="{% static 'images/diamantis/swordfish-4.png' %}" alt="{{ banner.title_eng }}" class="img-responsive"></div>
+                    </section>
+                    <section class="new-of-day padding-top-100 padding-bottom-100">
+                        <div class="container">
+                            <div class="main-title">
+                                <div class="bg-image"><img src="{% static 'images/diamantis/cuttle.png' %}" alt="" class="cuttle"></div>
+                                <h2 class="title">Our News</h2></div>
+                            <div class="main-content">
+                                <div class="list-news">
+                                    {% for post in blog %}
+                                        <div class="item">
+                                            <div class="images">
+                                                <a href="{% url 'blog_detail_eng' post.slug %}"><img src="{{ post.image.url }}" alt="{{ post.title_eng }}"></a>
+                                            </div>
+                                            <div class="infomation">
+                                                <div class="blog-detail-content">
+                                                    <div class="dates">
+                                                        <div class="day">{{ post.updated.day }}</div>
+                                                        <div class="month-year">{{ post.updated.month }}-{{ post.updated.year }}</div>
+                                                    </div>
+                                                    <div class="content"><a href="{% url 'blog_detail_eng' post.slug %}" class="title">{{ post.title_eng }}</a>
+                                                        <div class="info">
+                                                            <div class="item tag"><a href="#" class="link">{{ post.category_eng }}</a></div>
+                                                            <div class="item date"> <i class="fa fa-calendar-o"></i><span>Created... {{ post.publish|date }}</span></div>
+                                                        </div>
+                                                        <div class="description">
+                                                            {{ post.content_eng|truncatechars_html:20|safe }}
+                                                        </div><a href="{% url 'blog_detail_eng' post.slug %}" class="btn-readmore">read more</a>
+                                                        <div class="tags">
+                                                            <div class="title">tags</div>
+                                                            <ul class="list-inline list-tag">
+                                                                {% for tag in post.tags.all %}
+                                                                <li><a href="" class="name">{{ tag.title_eng }}</a></li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="book-table style-1">
+                        <div class="left-image"></div>
+                        <div class="right-infomation">
+                            <div class="content-wrapper padding-top-100 padding-bottom-100">
+                                <div class="main-title white">
+                                    <div class="bg-image"><img src="{% static 'images/diamantis/scallop-2.png' %}" alt="" class="scallop"></div>
+                                    <h2 class="title">book your table</h2></div>
+                                <div class="main-content">
+                                    <form method="post">{% csrf_token %}
+                                        <div class="row form-group">
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="input-group"><input id="'id_name" name="name" type="text" placeholder="Name" onfocus="this.placeholder = ''" class="form-control" required>
+                                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="input-group"><input id="id_phone" name="phone" type="number" placeholder="Phone" onfocus="this.placeholder = ''" class="form-control" required>
+                                                    <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="input-group"><input id="id_email" name="email" type="text" placeholder="Email(Optional)" onfocus="this.placeholder = ''" class="form-control">
+                                                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="input-group"><input id="id_people" name="people" type="number" placeholder="Number of Person" onfocus="this.placeholder = ''" class="form-control" required>
+                                                    <div class="input-group-addon"><i class="fa fa-users"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="input-group"><input id='id_resever_date' name="resever_date" type="date" placeholder="Date" class="form-control" required>
+                                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="input-group"><input type="time" id="id_time" name="time" placeholder="Time"  class="form-control" required>
+                                                    <div class="input-group-addon"><i class="fa fa-clock-o"> </i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-xs-12">
+                                                <div class="input-group"><input type="text" id='id_message' name="message" placeholder="Message(Optional)" onfocus="this.placeholder = ''" class="form-control">
+                                                    <div class="input-group-addon"><i class="fa fa-clock-o"> </i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn">Resever Now</button>
+                                    </form>
+                                     <div id="my_messages">
+                                        {% if messages %}
+                                                <ul class="messages">
+                                                    {% for message in messages %}
+                                                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><h2 style="color: #ff4929;text-decoration: none;">{{ message }}</h2></li>
+                                                    {% endfor %}
+                                                </ul>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="bg-images-pc"><img src="{% static 'images/diamantis/chef-2.png' %}" alt="{{ index_page.title_eng }}" class="img-responsive"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="subscribe-email">
+                        <div class="container">
+                            <div class="subscribe-email-wrapper">
+                                <div class="subscribe-email-left">
+                                    <p class="subscribe-email-title">Join us!</p>
+                                    <p class="subscribe-email-text">Learn first any event we create</p>
+                                </div>
+                                <div class="subscribe-email-right">
+                                    <form method="post">{% csrf_token %}
+                                        <div class="input-group form-subscribe-email">
+                                            <input name="email" type="email" placeholder="Type your email" class="form-control">
+                                            <span class="input-group-btn"><button type="submit" name="newsletter" class="btn-email">Get Offer</button></span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                {% endblock %}
+            <!-- FOOTER-->
+            <footer>
+                <div class="footer">
+                    <div class="footer-wrapper">
+                        <div class="footer-main padding-bottom-100">
+                            <div class="container">
+                                <div class="footer-main-wrapper">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <div class="col-md-4 col-xs-6">
+                                                <div class="gamba-descripton widget">
+                                                    <a href="{% url 'homepage_eng' %}" class="logo"><img src="{% static 'images/diamantis/diamantis_logo.png' %}" alt="{{ index_page.title_eng }}" /></a>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-xs-6">
+                                                <div class="gamba-info widget">
+                                                    <div class="title">Info</div>
+                                                    <div class="content-widget">
+                                                        <div class="info-list">
+                                                            <ul class="list-unstyled">
+                                                                <li><i class="icons fa fa-envelope-o"></i><a href="#" class="link">laggielen@gmail.com</a></li>
+                                                                <li><i class="icons fa fa-map-marker"></i><a href="#" class="link">Gerakas Lakonias </a></li>
+                                                                <li><i class="icons fa fa-phone"></i><a href="#" class="link link-2">2732023849 - 27320301601 </a></li>
+                                                                <li><i class="icons fa fa-phone"></i><a href="#" class="link link-2">6951254340 - 6943883557 </a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="col-md-4 col-xs-6">
+                                                <div class="gamba-opentime widget">
+                                                    <div class="title">Opening Time</div>
+                                                    <div class="content-widget">
+                                                         {% for time in open_hours %}
+                                                        <div class="time-service">
+                                                            <div class="title-time">{{ time.title_eng }}</div>
+                                                            <div class="content-time">{{ time.open }} - {{ time.close }}</div>
+                                                        </div>
+                                                        {% endfor %}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hyperlink">
+                            <div class="container">
+                                <div class="name-company pull-left">&copy; Designed by Christos Stathakis</div>
+                                <div class="social-footer pull-right">
+                                    <ul class="list-inline list-unstyled">
+                                        <li><a href="https://www.facebook.com/Ψαροταβερνα-Ο-Διαμαντης-306423319481527/" class="link facebook"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" class="link twitter"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" class="link pinterest"><i class="fa fa-pinterest-p"></i></a></li>
+                                        <li><a href="#" class="link google"><i class="fa fa-google"></i></a></li>
+                                        <li><a href="#" class="link instagram"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- BUTTON BACK TO TOP-->
+            <div id="back-top"><a href="#top" class="link"><i class="fa fa-angle-double-up"></i></a></div>
+        </div>
+        </div>
+      {% include 'resto/include_hmtl/js_files.html' %}
+{% block additional_js %}
+            <!-- LOADING SCRIPTS FOR PAGE-->
+        <script src="{% static 'assets/js/pages/homepage.js' %}"></script>
+        <script src={% static 'assets/libs/background-video/video-bg.js' %}></script>
+        <script src="{% static 'assets/js/pages/coming-soon.js' %}"></script>
+        <script src="{% static 'assets/libs/parallax/jquery.parallax-scroll.js' %}"></script>
+{% endblock %}
+    </body>
+
+</html>

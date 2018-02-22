@@ -1,0 +1,384 @@
+{% extends 'english/index-en.html' %}
+{% block menu %}
+     <ul class="nav-links nav navbar-nav">
+         <li><a href="{% url 'homepage_eng' %}" class="main-menu"><span class="text">Homepage</span></a></li>
+         <li><a href="{% url 'about_eng' %}" class="main-menu"><span class="text">About</span></a></li>
+         <li><a href="{% url 'reservation_eng' %}" class="main-menu"><span class="text">Reservation</span></a></li>
+         <li class="active"><a href="{% url 'menu_eng' %}" class="main-menu"><span class="text">menu</span></a></li>
+         <li><a href="{% url 'blog_eng' %}" class="main-menu"><span class="text">blog</span></a></li>
+         <li><a href="{% url 'contact_eng' %}" class="main-menu"><span class="text">contact</span></a></li>
+     </ul>
+{% endblock %}
+{% block content %}
+    <div id="wrapper-content">
+        <!-- MAIN CONTENT-->
+        <div class="main-contents">
+            <section class="morepage-banner-wrapper menu-gird">
+                <div class="container">
+                    <div class="morepage-banner">
+                        <div class="group-icons"><i class="icons flaticon-anchor-1"></i></div>
+                        <h2 class="title">Our menu</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="/" class="link">Home</a></li>
+                            <li class="active"><a href="{% url 'menu' %}" class="link">Menu</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section class="main-menu padding-top-100 padding-bottom-100">
+                <div class="container">
+                    <div class="main-title-2">
+                        <div class="icons">//</div>
+                        <h2 class="title">main menu</h2></div>
+                    <div class="main-content">
+                        <div class="tab-main-menu">
+                            {% for category in recipe_categories %}
+                            <div class="name">
+                                {% if category.image %}
+                                <img src="{{ category.image.url }}" alt="{{ post.title }}" class="img-responsive image-1">
+                                {% endif %}
+                                {% if category.black_image %}
+                                <img src="{{ category.black_image.url }}" alt="{{ post.title }}" class="img-responsive image-2">
+                                {% endif %}
+                                <span class="text">{{ post.title }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                <div class="content-menu">
+                    {% for category in recipe_categories %}
+                        <div class="tab-pane">
+                        <div class="row">
+                            {% for recipe in object_list %}
+                                {% if recipe.category == category %}
+                                    <div class="col-md-4 col-sm-4 col-xs-6">
+                                        <div class="menu-items style-4">
+                                            {% if recipe.image %}
+                                            <a href="#" class="item-image"><img src="{{ recipe.image.url }}" alt="" class="img-responsive"></a>
+                                            {% endif %}
+                                            <div class="item-content">
+                                                <div class="price"><sup>{{ currency }}</sup><span>{{ recipe.price }}</span></div><a href="#" class="title">{{ recipe.title }}</a>
+                                                <div class="desciption">{{ recipe.text|safe|truncatechars_html:20 }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        </section>
+        <section class="banner banner-deserts padding-top-100 padding-bottom-100">
+            <div class="container">
+                <div class="main-title-2 white no-margin">
+                    <div class="icons">//</div>
+                    <h2 class="title">deserts</h2></div>
+            </div>
+        </section>
+        <div class="sub-menu padding-top-100 padding-bottom-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-8.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Chicken Doro Wat</div>
+                                    <div class="price"><sup>$</sup><span>54.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-1.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Kung pao pastrami</div>
+                                    <div class="price"><sup>$</sup><span>65.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-3.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Masala Spiced Chickpeas</div>
+                                    <div class="price"><sup>$</sup><span>73.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-6.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Annalisa Tomato</div>
+                                    <div class="price"><sup>$</sup><span>38.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-7.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Crab & Tarracon Tart</div>
+                                    <div class="price"><sup>$</sup><span>49.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-5.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Jalapeno Mango Salsa</div>
+                                    <div class="price"><sup>$</sup><span>68.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-11.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">West Coast Rock Oysters</div>
+                                    <div class="price"><sup>$</sup><span>49.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-4.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">mexico Mango Salas</div>
+                                    <div class="price"><sup>$</sup><span>68.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="banner banner-drinks padding-top-100 padding-bottom-100">
+            <div class="container">
+                <div class="main-title-2 white no-margin">
+                    <div class="icons">//</div>
+                    <h2 class="title">drinks</h2></div>
+            </div>
+        </section>
+        <div class="sub-menu padding-top-100 padding-bottom-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-12.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Chicken Doro Wat</div>
+                                    <div class="price"><sup>$</sup><span>54.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-2.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Kung pao pastrami</div>
+                                    <div class="price"><sup>$</sup><span>65.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-10.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Masala Spiced Chickpeas</div>
+                                    <div class="price"><sup>$</sup><span>73.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-9.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Annalisa Tomato</div>
+                                    <div class="price"><sup>$</sup><span>38.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-11.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Crab & Tarracon Tart</div>
+                                    <div class="price"><sup>$</sup><span>49.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-6.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">Jalapeno Mango Salsa</div>
+                                    <div class="price"><sup>$</sup><span>68.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-4.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">West Coast Rock Oysters</div>
+                                    <div class="price"><sup>$</sup><span>49.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="menu-items style-3">
+                            <a href="#" class="item-image"><img src="assets/images/menu/small-menu-7.jpg" alt="" class="img-responsive"></a>
+                            <div class="item-content">
+                                <a href="#" class="title">
+                                    <div class="name">mexico Mango Salas</div>
+                                    <div class="price"><sup>$</sup><span>68.00</span></div>
+                                </a>
+                                <div class="desciption">Lorem ipsum dolor sit a met, consec tetur.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subscribe-email">
+            <div class="container">
+                <div class="subscribe-email-wrapper">
+                    <div class="subscribe-email-left">
+                        <p class="subscribe-email-title">Check how all the dishes are cooked today!</p>
+                        <p class="subscribe-email-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
+                    </div>
+                    <div class="subscribe-email-right">
+                        <form>
+                            <div class="input-group form-subscribe-email"><input type="text" placeholder="Type Your Email" class="form-control"><span class="input-group-btn"><button type="submit" class="btn-email">Get Offer</button></span></div>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+{% endblock %}
+
+{% block additional_js %}
+<script type="text/javascript">
+    jQuery(function($) {
+    "use strict";
+
+    var gamba = window.gamba || {};
+
+    gamba.mainFunction = function(){
+        // slide testimonial
+         $('.content-menu').slick({
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: false,
+              arrows: false,
+              fade: true,
+              asNavFor: '.tab-main-menu'
+        });
+        $('.tab-main-menu').slick({
+              slidesToShow: 6,
+              slidesToScroll: 1,
+              speed: 300,
+              asNavFor: '.content-menu',
+              dots: false,
+              focusOnSelect: true,
+              responsive: [
+                {
+                    breakpoint: 1025,
+                    settings: {
+                        slidesToShow: 5
+                    }
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 481,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 415,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
+    };
+
+    /*======================================
+    =            INIT FUNCTIONS            =
+    ======================================*/
+
+    $(document).ready(function() {
+        gamba.mainFunction();
+    });
+    /*=====  End of INIT FUNCTIONS  ======*/
+
+});
+</script>
+{% endblock %}

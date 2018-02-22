@@ -1,0 +1,163 @@
+{% extends 'english/index-en.html' %}
+
+{% block seo %}
+     <title>{{ index_page.title_eng }} | Blog</title>
+     <meta name="description" content="{{ blog_info.seo_description_eng }}">
+     <meta name="keywords" content="{{ blog_info.seo_keywords_eng }}">
+{% endblock %}
+
+{% block menu %}
+     <ul class="nav-links nav navbar-nav">
+         <li><a href="{% url 'homepage_eng' %}" class="main-menu"><span class="text">Homepage</span></a></li>
+         <li><a href="{% url 'menu_eng' %}" class="main-menu"><span class="text">menu</span></a></li>
+         <!--<li><a href="{% url 'about_eng' %}" class="main-menu"><span class="text">About</span></a></li> -->
+         <li><a href="{% url 'reservation_eng' %}" class="main-menu"><span class="text">Reservation</span></a></li>
+         <li class="active"><a href="{% url 'blog_eng' %}" class="main-menu"><span class="text">blog</span></a></li>
+         <li><a href="{% url 'contact_eng' %}" class="main-menu"><span class="text">contact</span></a></li>
+     </ul>
+{% endblock %}
+
+{% block content %}
+
+    <div id="wrapper-content">
+        <!-- MAIN CONTENT-->
+        <div class="main-contents">
+            <section class="morepage-banner-wrapper blog">
+                <div class="container">
+                    <div class="morepage-banner">
+                        <h2 class="title">Our Blog</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="{% url 'homepage_eng' %}" class="link">Home</a></li>
+                            <li class="active"><a href="{% url 'blog_eng' %}" class="link">Blog</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <div class="page-main padding-top-100 padding-bottom-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12 sidebar">
+                                <form method="get">
+                                    <div class="col-1">
+                                        <div class="search-widget widget">
+                                                <div class="input-group search-wrapper">
+                                                    <input name="query" type="text" placeholder="Search..." class="search-input form-control">
+                                                        <span class="input-group-btn"><button type="submit" class="btn submit-btn">
+                                                        <span class="fa fa-search"></span></button>
+                                                    </span>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="recent-post-widget widget">
+                                            <div class="title-widget">Announcements</div>
+                                            <div class="content-widget">
+                                                <div class="recent-post-list">
+                                                    {% for post in announcements %}
+                                                    <div class="single-recent-post-widget">
+                                                        <a href="{% url 'blog_detail_eng' post.slug %}" class="thumb img-wrapper"><img src="{{ post.image.url }}" alt="{{ post.title_eng }}" class="img-responsive"></a>
+                                                        <div class="post-info">
+                                                            <div class="meta-info"><span>{{ post.updated|date }}</span><span class="sep">/ {{ post.category_eng }}</span></div>
+                                                            <div class="description">{{ post.title_eng }}</div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="categories-widget widget">
+                                            <div class="title-widget">Categories</div>
+                                            <div class="content-widget">
+                                                    {% for category in post_cat %}
+                                                        {% if category.id|stringformat:'i' in category_filter %}
+                                                            <input name="category" value="{{ category.id }}" onchange="this.form.submit()"  type="checkbox" checked><span class="fa-category"> {{ category.title_eng }}</span><br>
+                                                        {% else %}
+                                                            <input name="category" value="{{ category.id }}" onchange="this.form.submit()"  type="checkbox"><span class="fa-category"> {{ category.title_eng }}</span><br>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="tags-widget widget">
+                                            <div class="title-widget">TAGS</div>
+                                            <div class="content-widget">
+                                                {% for tag in post_tags %}
+                                                    {% if tag.id|stringformat:'i' in tag_filter %}
+                                                    <label onclick="this.form.submit()">
+                                                        <input style="display: none;" name="tag" id="{{ tag.title }}"  value="{{ tag.id }}" onchange="this.form.submit()" type="checkbox" checked><span class="tag"> {{ tag.title }}</span>
+                                                    </label>
+                                                    {% else %}
+                                                        <label onclick="this.form.submit()">
+                                                            <input style="display: none;" name="tag" id="{{ tag.title }}"  value="{{ tag.id }}" onchange="this.form.submit()" type="checkbox"><span class="tag"> {{ tag.title }}</span>
+                                                        </label>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                        </div>
+                        <div class="col-md-8 col-xs-12 main-right blog-wrapper">
+                            {% for post in object_list %}
+                            <div class="blog-post">
+                                <div class="blog-image">
+                                    <a href="{% url 'blog_detail_eng' post.slug %}"> <img width="600px" height="400px" src="{{ post.image.url }}" alt="{{ post.title_eng }}" class="img-responsive"></a>
+                                </div>
+                                <div class="blog-content">
+                                            <div class="blog-detail-content">
+                                                    <div class="dates">
+                                                        <div class="day">{{ post.updated.day }}</div>
+                                                        <div class="month-year">{{ post.updated.month }}-{{ post.updated.year }}</div>
+                                                    </div>
+                                                    <div class="content"><a href="{% url 'blog_detail_eng' post.slug %}" class="title">{{ post.title_eng }}</a>
+                                                        <div class="info">
+                                                            <div class="item tag"><a href="" class="link">Category... {{ post.category }}</a></div>
+                                                            <div class="item date"> Day published... {{ post.publish|date }}</div>
+                                                            <div class="item tag">
+                                                                <a href="" class="link"> Tags..
+                                                                    {% for tag in post.tags.all %}
+                                                                        {{ tag.title_eng }},
+                                                                    {% endfor %}
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="description">
+                                                             {{ post.content_eng|safe|truncatechars_html:20 }}
+                                                        </div><a href="{% url 'blog_detail_eng' post.slug %}" class="btn-readmore">Continue</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            {% endfor %}
+                            <nav class="pagination-list margin-top-50">
+                                {% if is_paginated %}
+                                  <ul class="pagination">
+                                    {% if page_obj.has_previous %}
+                                      <li><a aria-label="Previous" class="btn-pagination previous" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                                    {% else %}
+                                      <li class="disabled"><span>&laquo;</span></li>
+                                    {% endif %}
+                                    {% for i in paginator.page_range %}
+                                      {% if page_obj.number == i %}
+                                        <li class="btn-pagination active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                      {% else %}
+                                        <li><a class="btn-pagination" href="?page={{ i }}">{{ i }}</a></li>
+                                      {% endif %}
+                                    {% endfor %}
+                                    {% if page_obj.has_next %}
+                                      <li><a aria-label="Next" class="btn-pagination next" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                                    {% else %}
+                                      <li class="disabled"><span>&raquo;</span></li>
+                                    {% endif %}
+                                  </ul>
+                                {% endif %}
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

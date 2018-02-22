@@ -1,0 +1,1464 @@
+/**
+ * [Table of contents]
+ *
+ * [&. Content / #key]
+ * [Let press Ctrl + f and type of paste the key, then press Enter to search the content ]
+ *
+ * Summary:
+ *
+ *  0. VARIABLE LESS
+ *    - 0.1. Color
+ *  1. RESPONSIVE SCREEN
+ *    - 1.1. Media screen max width 1024px
+ *    - 1.2. Media screen max width 768px
+ *    - 1.3. Media screen max width 767px
+ *    - 1.4. Media screen max width 600px
+ *    - 1.5. Media screen max width 480px
+ *    - 1.6. Media screen max width 414px
+ *    - 1.7. Media screen max width 380px
+ *    - 1.8. Media screen max width 320px
+ */
+
+/*=====================================
+=            VARIABLE LESS            =
+=====================================*/
+
+/**
+ * [Table of contents]
+ *
+ * [&. Content / #key]
+ * [Let press Ctrl + f and type of paste the key, then press Enter to search the content ]
+ *
+ * Summary:
+ *
+ *  0. VARIABLE LESS
+ *  1. MIXINS
+
+
+/*=============================
+ =====   VARIABLE LESS    =====
+ =============================*/
+
+/*=============================
+ ====  END VARIABLE LESS   ====
+ =============================*/
+
+/*=============================
+ =====       MIXINS       =====
+ =============================*/
+
+/*=============================
+ ====      END MIXINS      ====
+ =============================*/
+
+/*----------  0.1. Color  ----------*/
+
+/*=====  End of VARIABLE LESS  ======*/
+
+/*=========================================
+=            RESPONSIVE SCREEN            =
+
+=========================================*/
+
+/*----------  1.0. Media screen min width 1600px  ----------*/
+
+@media screen and (min-width: 1600px) {
+    /********************* HOME PAGE ***********************/
+
+    .homepage-default .homepage-banner-content .group-title .title {
+        font-size: 3.5rem;
+
+        margin-bottom: 25px;
+    }
+    .homepage-default .homepage-banner-content .group-title .text {
+        font-size: 16px;
+    }
+    .homepage-default .homepage-banner-content .group-open-hours {
+        margin-top: 30px;
+    }
+    .homepage-default .homepage-banner-content .group-open-hours .title {
+        font-size: 20px;
+    }
+    .homepage-default .homepage-banner-content .group-open-hours .time-1,
+    .homepage-default .homepage-banner-content .group-open-hours .time-2 {
+        font-size: 16px;
+    }
+    .menu-of-day.style-1 .right-infomation .content-wrapper {
+        width: 76%;
+        margin-left: 12%;
+    }
+    .book-table.style-1 .bg-images-pc,
+    .book-table.style-2 .bg-images-pc,
+    .book-table.style-4 .bg-images-pc {
+        display: block;
+    }
+    .book-table.style-3 {
+        background-position: center;
+    }
+    .book-table.style-3 .main-content {
+        width: 100%;
+    }
+    .contact-form-wrapper .bg-images-pc {
+        display: block;
+    }
+    .banner-prallax .title-bg {
+        left: 8%;
+    }
+    .banner-prallax .infomation-wrapper {
+        left: 7%;
+    }
+}
+
+/*----------  1.1. Media screen max width 1024px  ----------*/
+
+@media screen and (max-width: 1024px) {
+    /********************* HOME PAGE ***********************/
+
+    .main-title .title {
+        font-size: 3.8rem;
+
+        margin: 20px 0 50px 0;
+    }
+    .about-us-1 .left-image .homepage-hero-module {
+        display: none;
+    }
+    .about-us-1 .right-infomation .content-wrapper {
+        width: 100%;
+        margin-left: 0;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .about-us-1 .right-infomation .text {
+        margin-bottom: 20px;
+    }
+    .about-us-1 .right-infomation .signature img {
+        max-width: 100px;
+    }
+    .dish .box .border-efect {
+        display: none;
+    }
+    .dish .wrapper {
+        border: 1px solid #cdcfd1;
+    }
+    .tab-menu .name .icons {
+        margin-right: 10px;
+    }
+    .banner-prallax {
+        height: 450px;
+
+        text-align: center;
+    }
+    .banner-prallax .title-bg {
+        font-size: 7rem;
+
+        position: relative;
+        top: 45%;
+
+        margin-top: -50px;
+    }
+    .banner-prallax .infomation-wrapper {
+        top: 45%;
+    }
+    .banner-prallax .img-wrapper {
+        display: none;
+    }
+    .new-of-day .list-news {
+        margin-bottom: 45px;
+    }
+    .new-of-day .list-news .item .infomation {
+        width: 60%;
+    }
+    .new-of-day .list-news .item .images {
+        width: 40%;
+    }
+    .new-of-day .list-news .slick-dots {
+        top: auto;
+        right: auto;
+        bottom: -45px;
+        left: 50%;
+
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: -60px;
+    }
+    .new-of-day .list-news .slick-dots li {
+        display: inline-block;
+
+        margin: 0 10px;
+    }
+    .new-of-day .list-news .slick-dots li button {
+        right: auto !important;
+
+        text-align: center;
+    }
+    .new-of-day .list-news .slick-dots li button:before {
+        display: none;
+    }
+    .blog-detail-content .content {
+        padding-left: 15px;
+    }
+    .blog-detail-content .content .title {
+        font-size: 2rem;
+    }
+    .blog-detail-content .content .info {
+        margin-bottom: 20px;
+    }
+    .blog-detail-content .content .description .text {
+        margin-bottom: 20px;
+    }
+    .book-table .left-image {
+        width: 30%;
+    }
+    .book-table .right-infomation .content-wrapper {
+        width: 100%;
+        margin-left: 0;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .coming-soon-wrapper .left-infomation {
+        width: 45%;
+    }
+    .coming-soon-wrapper .left-infomation .open-hours-bg {
+        width: 100%;
+    }
+    .coming-soon-wrapper .right-infomation {
+        width: 55%;
+    }
+    .open-hours-bg .open-hours-wrapper .content .item .day:after {
+        width: 140px;
+    }
+    .coming-soon-event-wrapper .coming-soon-count .count-wrapper {
+        height: 140px;
+    }
+    .coming-soon-event-wrapper .coming-soon-count .count-wrapper .time .count {
+        font-size: 6rem;
+        line-height: 140px;
+    }
+    .subscribe-email .subscribe-email-wrapper .subscribe-email-left {
+        max-width: 580px;
+    }
+    .subscribe-email .subscribe-email-wrapper .subscribe-email-right {
+        max-width: 325px;
+    }
+    .subscribe-email .subscribe-email-wrapper .subscribe-email-right .form-subscribe-email .form-control {
+        padding-left: 15px;
+    }
+
+    .background-video .homepage-hero-module {
+        display: none;
+    }
+    .background-video .bg-image {
+        display: none;
+    }
+    .background-video .btn-click {
+        display: none;
+    }
+    .about-us-2 .right-image {
+        right: 0;
+        left: auto;
+
+        width: 38%;
+        margin-left: 0;
+    }
+    .about-us-2 .left-infomation .text {
+        margin-bottom: 20px;
+    }
+    .about-us-2 .left-infomation .signature img {
+        max-width: 100px;
+    }
+    .menu-items.style-2 .item-image {
+        width: 38%;
+    }
+    .testimonial-list {
+        width: 90%;
+    }
+    .testimonial-list .slider-for {
+        left: 0;
+    }
+    .testimonial-list .testimonial-item .news-content .content {
+        margin-left: -135px;
+    }
+    /********************* ABOUT US ***********************/
+
+    .logo-bg {
+        max-width: 400px;
+    }
+    /********************* CONTACT ***********************/
+
+    .contact-info-item {
+        padding: 0;
+    }
+}
+
+/*----------  1.2. Media screen max width 768px  ----------*/
+
+@media screen and (max-width: 768px) {
+    .header-main .logo-wrapper .logo img {
+        max-width: 110px;
+    }
+    .navigation .nav-links .main-menu {
+        margin: 0 18px;
+    }
+    .button-search .main-menu {
+        margin-right: 0;
+        margin-left: 18px;
+    }
+    .sidebar {
+        margin-top: 100px;
+    }
+    .sidebar .col-1 {
+        width: 100%;
+    }
+    .sidebar .col-2 {
+        float: left;
+
+        width: 50%;
+    }
+    .sidebar .col-2 .widget:last-child {
+        margin-bottom: 0;
+    }
+    .sidebar .col-2:nth-child(even) {
+        padding-right: 15px;
+    }
+    .sidebar .col-2:nth-child(odd) {
+        padding-left: 15px;
+    }
+    .main-right {
+        float: left;
+    }
+    /********************* HOME PAGE ***********************/
+
+    .homepage-default .homepage-banner-content {
+        text-align: center;
+    }
+    .about-us-1 .left-image {
+        display: none;
+    }
+    .about-us-1 .right-infomation .text {
+        text-align: justify;
+    }
+    .about-us-2 .left-infomation .text,
+    .about-us-3 .text {
+        text-align: justify;
+    }
+    .about-us-2 .left-infomation .group-list .box-media {
+        margin-bottom: 30px;
+    }
+    .about-us-2 .left-infomation .group-list .box-media .text {
+        text-align: left;
+    }
+    .menu-of-day.style-1 .left-image {
+        display: none;
+    }
+    .menu-of-day.style-1 .right-infomation .content-wrapper {
+        width: 100%;
+        margin: 0;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .menu-of-day.style-2 .tab-menu {
+        width: 100%;
+    }
+    .menu-of-day.style-2 .col-md-6:nth-child(even) .menu-items.style-2 .item-image {
+        float: right;
+
+        margin-right: 0;
+        margin-left: 20px;
+    }
+    .menu-of-day.style-2 .col-md-6:last-child .menu-items.style-2 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+        border-bottom: none;
+    }
+    .banner-prallax .infomation-wrapper .description {
+        width: 90%;
+    }
+    .new-of-day .list-news .item .infomation,
+    .new-of-day .list-news .item .images {
+        float: left;
+
+        width: 100%;
+        padding: 0 15px;
+    }
+    .new-of-day .list-news .item .images {
+        margin-bottom: 30px;
+    }
+    .book-table.style-1 .left-image,
+    .book-table.style-2 .left-image {
+        display: none;
+    }
+    .book-table .right-infomation .content-wrapper {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .coming-soon-wrapper {
+        display: block;
+    }
+    .coming-soon-wrapper .left-infomation,
+    .coming-soon-wrapper .right-infomation {
+        display: block;
+
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .coming-soon-wrapper .left-infomation {
+        padding-top: 100px;
+    }
+    .coming-soon-wrapper .left-infomation .open-hours-bg {
+        max-width: 470px;
+        margin: 0 auto;
+    }
+    .open-hours-bg .open-hours-wrapper .content .item .day:after {
+        width: 210px;
+    }
+    .subscribe-email .subscribe-email-wrapper .subscribe-email-right {
+        float: left;
+
+        margin-top: 20px;
+    }
+    .footer-wrapper .col-2 {
+        display: inline-block;
+
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .footer-wrapper .col-2:last-child {
+        margin-bottom: 0;
+    }
+    .blog-detail-content .content .tags {
+        margin-top: 30px;
+    }
+    /******************** HOME PAGE 2 **********************/
+
+    .background-video .group-title {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .about-us-2 .right-image {
+        display: none;
+    }
+    .about-us-2 .left-infomation .content-wrapper {
+        width: 100%;
+    }
+    .menu-items.style-2 {
+        display: inline-block;
+
+        width: 100%;
+        margin-bottom: 25px;
+        padding-bottom: 30px;
+
+        border-bottom: 1px dashed #ebebeb;
+    }
+    .menu-items.style-2 .item-image {
+        display: inline-block;
+        float: left;
+
+        width: 40%;
+        margin-right: 20px;
+    }
+    .menu-items.style-2 .item-image img {
+        width: 100%;
+    }
+    .menu-items.style-2 .item-content {
+        display: inline-block;
+        float: left;
+
+        width: calc(60% - 20px);
+        padding: 15px 0;
+    }
+    .book-table.style-3 .main-content,
+    .book-table.style-4 .main-content {
+        width: 100%;
+    }
+    .testimonial.style-2 .testimonial-list .testimonial-item .news-content:after {
+        left: 10%;
+    }
+    .testimonial-list .testimonial-item .news-content {
+        padding: 30px 0 0 20px;
+    }
+    /******************** HOME PAGE 3 **********************/
+
+    .background-slide .slide-item.background-item-3 .homepage-banner-content {
+        text-align: center;
+    }
+    /******************** ABOUT US **********************/
+
+    .coming-soon.style-2 .logo-bg {
+        max-width: 470px;
+        margin: 0 auto 50px auto;
+
+        background-position: top;
+    }
+    .coming-soon.style-2 .coming-soon-wrapper .left-infomation {
+        padding-top: 0;
+    }
+    /******************** LIST MENU **********************/
+
+    .meal-wrapper .col-md-6:nth-child(even) .menu-items.style-2 .item-image {
+        float: right;
+
+        margin-right: 0;
+        margin-left: 20px;
+    }
+    .meal-wrapper .col-md-6:last-child .menu-items.style-2 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+        border-bottom: none;
+    }
+    /******************** EVENT **********************/
+
+    .more-event .coming-soon-wrapper .left-infomation {
+        padding-top: 0;
+        padding-bottom: 60px;
+    }
+    .more-event .coming-soon-wrapper:last-child .left-infomation {
+        padding-top: 60px;
+        padding-bottom: 0;
+    }
+    .more-event .coming-soon-wrapper .logo-bg {
+        margin: 0 auto;
+    }
+    /******************** 404 **********************/
+
+    .page-404 .title {
+        margin-top: 15%;
+    }
+}
+
+/*----------  1.3. Media screen max width 767px  ----------*/
+
+@media screen and (max-width: 767px) {
+    .padding-top-100 {
+        padding-top: 60px;
+    }
+    .padding-bottom-100 {
+        padding-bottom: 60px;
+    }
+    .margin-top-70 {
+        margin-top: 50px;
+    }
+    .margin-top-50 {
+        margin-top: 30px;
+    }
+    .sidebar {
+        margin-top: 60px;
+    }
+    .sidebar .widget {
+        margin-bottom: 30px;
+    }
+    /********************* MENU ***********************/
+
+    .header-main .navigation {
+        display: none;
+    }
+    .header-main.header-fixed .hamburger-menu-mobile .icons,
+    .header-main.header-fixed .button-search-mobile .icons {
+        line-height: 50px;
+    }
+    .hamburger-menu-mobile,
+    .button-search-mobile {
+        display: block;
+    }
+    .header-main-wrapper {
+        position: relative;
+    }
+    .logo-wrapper {
+        position: absolute;
+        left: 50%;
+
+        margin-left: -55px;
+    }
+    .homepage-banner,
+    .background-slide .slide-item {
+        min-height: 667px;
+    }
+    /********************* HOME PAGE ***********************/
+
+    .homepage-default,
+    .special-menu,
+    .banner,
+    .testimonial,
+    .morepage-banner-wrapper,
+    .background-slide .slide-item,
+    .menu-of-day.style-3,
+    .main-event {
+        background-attachment: scroll;
+    }
+    .main-title .bg-image {
+        margin-top: -60px;
+    }
+    .main-title .bg-image .crawfish {
+        max-width: 170px;
+    }
+    .main-title .bg-image .clamp {
+        max-width: 120px;
+    }
+    .main-title .bg-image .kingcrab {
+        position: relative;
+        top: -15px;
+
+        max-width: 140px;
+    }
+    .main-title .bg-image .cuttle {
+        max-width: 280px;
+    }
+    .main-title .bg-image .scallop {
+        max-width: 120px;
+    }
+    .main-title .bg-image .shrimp {
+        position: relative;
+        top: 10px;
+
+        max-width: 170px;
+    }
+    .main-title .bg-image .swordfish {
+        max-width: 250px;
+    }
+    .main-title .bg-image img {
+        display: block;
+
+        margin: 0 auto;
+    }
+    .main-title .title {
+        font-size: 3.2rem;
+
+        margin-bottom: 40px;
+    }
+    .tab-menu {
+        margin-bottom: 30px;
+    }
+    .banner-prallax {
+        height: 380px;
+    }
+    .banner-prallax .title-bg {
+        font-size: 6rem;
+    }
+    .banner-prallax .infomation-wrapper .title {
+        font-size: 2.4rem;
+    }
+    .new-of-day .list-news .slick-dots {
+        bottom: -35px;
+    }
+    .book-table .form-group {
+        margin-bottom: 30px;
+    }
+    .coming-soon-wrapper .left-infomation {
+        padding-top: 60px;
+    }
+    .subscribe-email .subscribe-email-wrapper .subscribe-email-right {
+        margin-top: 15px;
+    }
+    .footer {
+        position: relative;
+
+        display: block;
+
+        width: auto;
+        height: auto;
+    }
+    .footer .footer-wrapper {
+        display: block;
+    }
+    .footer .footer-main {
+        padding: 80px 0 100px 0;
+    }
+    .gamba-descripton .logo-foogter {
+        margin-bottom: 30px;
+    }
+    .footer-wrapper .widget .content-widget {
+        margin-top: 30px;
+    }
+    .hyperlink {
+        padding: 15px 0;
+    }
+    .banner-prallax .infomation-wrapper {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .banner-prallax .img-wrapper-2 {
+        width: 40%;
+    }
+    .menu-of-day.style-1 .right-infomation .content-wrapper,
+    .about-us-1 .right-infomation .content-wrapper {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    /******************** HOME PAGE 2 **********************/
+
+    .background-video .homepage-banner-content {
+        padding-top: 140px;
+    }
+    .coming-soon-event-wrapper {
+        max-width: 570px;
+        margin: 0 auto;
+    }
+    /******************** HOME PAGE 3 **********************/
+
+    .menu-of-day .content-menu .col-sm-6:nth-last-child(-n + 2) .menu-items.style-3 {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+
+        border-bottom: 1px dashed #ebebeb;
+    }
+    .menu-of-day .content-menu .col-sm-6:last-child .menu-items.style-3 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+        border-bottom: none;
+    }
+    .background-slide .homepage-banner-content .logo-images {
+        margin-bottom: 60px;
+    }
+    .about-us-3 .video-thumbnail {
+        margin-top: 30px;
+    }
+    .special-menu.style-3 .dish .box {
+        border: 3px solid #eeeeee;
+    }
+    .special-menu.style-3 .dish .wrapper {
+        border: none;
+    }
+    /******************** RESERVATION **********************/
+
+    .main-title-2 {
+        margin-bottom: 40px;
+    }
+    .book-table .more-infomation .col-sm-6 {
+        margin-top: 40px;
+    }
+    .book-table .more-infomation .title-info {
+        margin-bottom: 20px;
+    }
+    .taste-of-fresh {
+        width: 100%;
+    }
+    /******************** BLOG **********************/
+
+    .blog-post {
+        margin-bottom: 40px;
+    }
+    /******************** CONTACTS **********************/
+
+    .contact-info-item {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .contact-info-item .icons {
+        margin-bottom: 20px;
+    }
+    .contact-info .col-sm-4 {
+        margin-bottom: 30px;
+    }
+    .contact-info .col-sm-4:last-child {
+        margin-bottom: 0;
+    }
+    .contact-form .col-sm-4 {
+        margin-bottom: 30px;
+    }
+    .contact-form .col-sm-4:last-child {
+        margin-bottom: 0;
+    }
+    .contact-map #googleMap {
+        height: 400px;
+    }
+    /******************** LIST MENU **********************/
+
+    .tab-main-menu .slick-prev {
+        left: -15px;
+    }
+    .tab-main-menu .slick-next {
+        right: -15px;
+    }
+    .main-menu .content-menu {
+        margin-bottom: 0;
+    }
+    .main-menu .content-menu .menu-items.style-4 {
+        margin-bottom: 30px;
+    }
+    .main-menu .content-menu .col-md-4:nth-last-child(-n + 3) .menu-items.style-4 {
+        margin-bottom: 30px;
+    }
+    .main-menu .content-menu .col-md-4:nth-last-child(-n + 2) .menu-items.style-4 {
+        margin-bottom: 0;
+    }
+    .sub-menu .col-sm-6:nth-last-child(-n+2) .menu-items.style-3 {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+
+        border-bottom: 1px dashed #ebebeb;
+    }
+    .sub-menu .col-sm-6:last-child .menu-items.style-3 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+        border: none;
+    }
+    /******************** EVENT **********************/
+
+    .more-event .coming-soon-wrapper .left-infomation {
+        padding-top: 0;
+        padding-bottom: 60px;
+    }
+    .more-event .coming-soon-wrapper:last-child .left-infomation {
+        padding-top: 60px;
+        padding-bottom: 0;
+    }
+    .more-event .coming-soon-wrapper .logo-bg {
+        margin: 0 auto;
+
+        background-attachment: scroll;
+    }
+    /******************** 404 **********************/
+
+    .page-404 {
+        min-height: 667px;
+    }
+    .page-404 .title {
+        margin-top: 50px;
+    }
+    /******************** GALLERY **********************/
+
+    .description-gallery {
+        margin-top: 50px;
+    }
+}
+
+/*----------  1.4. Media screen max width 600px  ----------*/
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
+    .header-topbar .topbar-right {
+        display: none;
+    }
+    .header-topbar .topbar-left > li {
+        padding: 0 10px;
+    }
+    .sidebar .col-1 {
+        width: 100%;
+    }
+    .sidebar .col-2 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .sidebar .col-2:last-child {
+        margin-bottom: 0;
+    }
+    .sidebar .col-2:nth-child(even) {
+        padding-right: 0;
+    }
+    .sidebar .col-2:nth-child(odd) {
+        padding-left: 0;
+    }
+    /********************* HOME PAGE ***********************/
+
+    .homepage-default .homepage-banner-content .group-title .title {
+        font-size: 3rem;
+        line-height: 1.4;
+    }
+    .background-video .homepage-banner-content .group-title .title {
+        font-size: 3rem;
+        line-height: 1.4;
+    }
+    .special-menu .list-dish {
+        margin: 0 -10px;
+    }
+    .special-menu .list-dish .dish {
+        margin: 0 10px;
+    }
+    .dish .box {
+        height: 420px;
+    }
+    .dish .box .image-dish {
+        max-width: 160px;
+        min-height: 120px;
+    }
+    .tab-menu {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+
+        border-bottom: 1px dashed #dfe0e1;
+    }
+    .tab-menu .name {
+        display: inline-block;
+
+        padding-bottom: 15px;
+
+        border-bottom: 1px dashed #dfe0e1;
+    }
+    .tab-menu li {
+        width: 50%;
+        margin-bottom: 15px;
+    }
+    .tab-menu li:nth-child(odd):before {
+        border-left: none;
+    }
+    .tab-menu li:nth-child(even):before {
+        border-left: 1px dashed #dfe0e1;
+    }
+    .tab-menu li:nth-last-child(-n+2) {
+        margin-bottom: 0;
+    }
+    .tab-menu li:nth-last-child(-n+2) .name {
+        padding-bottom: 0;
+
+        border: none;
+    }
+    .menu-items.style-2 {
+        margin-bottom: 15px;
+        padding-bottom: 20px;
+    }
+    .testimonial-list {
+        width: 100%;
+    }
+    .testimonial-list .testimonial-item {
+        padding: 0;
+    }
+    .testimonial-list .testimonial-item .icons {
+        display: none;
+    }
+    .testimonial-list .testimonial-item .news-content {
+        padding: 20px 0 0 0;
+
+        text-align: center;
+    }
+    .testimonial-list .testimonial-item .news-content .content {
+        top: -20px;
+        left: auto;
+
+        display: inline-block;
+
+        width: auto;
+        margin-left: 0;
+    }
+    /********************* HOME PAGE 3 **********************/
+
+    .main-title-2 {
+        margin-bottom: 30px;
+    }
+    .background-slide .homepage-banner-content .group-title .title,
+    .background-slide .homepage-banner-content .group-title-2 .title {
+        font-size: 3rem;
+    }
+    .logo-bg .list-logo {
+        padding: 50px 0;
+    }
+    /********************* LIST MENU **********************/
+
+    .meal-wrapper .description-menu {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .meal-wrapper .more-image {
+        margin-bottom: 30px;
+    }
+    .meal-wrapper .more-image img {
+        max-width: 45%;
+    }
+    .menu-items.style-4 .item-content .price {
+        margin-bottom: 10px;
+    }
+    /********************* BLOG **********************/
+
+    .blog-post .blog-image {
+        margin-bottom: 30px;
+    }
+    /******************** EVENT **********************/
+
+    .main-event .coming-soon-event-wrapper .coming-soon-count {
+        margin: 50px 0 0 0;
+    }
+    .more-event .coming-soon-wrapper .left-infomation {
+        padding-bottom: 30px;
+    }
+    .more-event .coming-soon-wrapper:last-child .left-infomation {
+        padding-top: 30px;
+    }
+    /******************** GALLERY **********************/
+
+    .gallery-wrapper .tab-menu {
+        display: inline-block;
+
+        width: 100%;
+    }
+    .gallery-wrapper .tab-menu li {
+        display: inline-block;
+        float: left;
+
+        width: 25%;
+    }
+    .gallery-wrapper .tab-menu li:before {
+        position: absolute;
+        right: 0;
+        left: auto;
+
+        height: 100%;
+
+        content: '';
+
+        border-left: 1px dashed #dfe0e1 !important;
+    }
+    .description-gallery {
+        margin-top: 0;
+    }
+    .grid-gallery {
+        margin: 0 -10px;
+    }
+    .grid-item-wrapper {
+        width: 50%;
+    }
+    .grid-item-wrapper .grid-item {
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+/*----------  1.5. Media screen max width 480px  ----------*/
+
+@media screen and (max-width: 480px) {
+    /********************* HOME PAGE ***********************/
+
+    .group-btn .btn-left {
+        display: block;
+
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .group-btn .btn-right {
+        display: block;
+
+        margin: 0 auto;
+    }
+    .menu-of-day .content-menu .col-sm-6.col-xs-6 {
+        width: 100%;
+    }
+    .menu-of-day .content-menu .col-sm-6:nth-last-child(-n + 2) .menu-items.style-1 {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+
+        border-bottom: 1px dashed #ebebeb;
+    }
+    .menu-of-day .content-menu .col-sm-6:last-child .menu-items.style-1 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+        border: none;
+    }
+    .blog-detail-content .dates {
+        display: none;
+    }
+    .blog-detail-content .content {
+        padding-left: 0;
+    }
+    .new-of-day .list-news {
+        margin-bottom: 30px;
+    }
+    .new-of-day .list-news .slick-dots {
+        bottom: -25px;
+    }
+    .book-table .form-group .col-sm-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .book-table .form-group .col-sm-6:nth-last-child(-n + 2) {
+        margin-bottom: 20px;
+    }
+    .book-table .form-group .col-sm-6:last-child {
+        margin-bottom: 0;
+    }
+    .open-hours-bg .open-hours-wrapper .content .item .day:after {
+        width: 130px;
+    }
+    .coming-soon-event-wrapper .coming-soon-count {
+        margin-top: 30px;
+    }
+    .coming-soon-event-wrapper .coming-soon-count .count-wrapper {
+        height: 100px;
+    }
+    .coming-soon-event-wrapper .coming-soon-count .count-wrapper .time .count {
+        font-size: 4.8rem;
+        line-height: 100px;
+    }
+    .footer .footer-main {
+        padding-top: 60px;
+    }
+    .footer-wrapper .col-2 .col-md-3 {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .footer-wrapper .col-2 .col-md-3:last-child {
+        margin-bottom: 0;
+    }
+    .banner-prallax .img-wrapper-2 {
+        width: 70%;
+    }
+    .gamba-descripton {
+        top: 0;
+    }
+    .gamba-gallery .slick-prev,
+    .gamba-gallery .slick-next {
+        top: 108%;
+    }
+    /******************** HOME PAGE 2 **********************/
+
+    .video-thumbnail .video-button-play {
+        font-size: 1.4rem;
+        line-height: 46px;
+
+        width: 50px;
+        height: 50px;
+        padding-left: 3px;
+    }
+    /******************** ABOUT US **********************/
+
+    .about-us-2 .left-infomation .group-list {
+        margin-top: 30px;
+    }
+    .about-us-2 .left-infomation .group-list .col-xs-6 {
+        width: 100%;
+    }
+    .about-us-2 .left-infomation .group-list .col-xs-6 .box-media {
+        margin-bottom: 20px;
+    }
+    .about-us-2 .left-infomation .group-list .col-xs-6:nth-last-child(-n + 2) .box-media {
+        margin-bottom: 20px;
+    }
+    .about-us-2 .left-infomation .group-list .col-xs-6:last-child .box-media {
+        margin-bottom: 0;
+    }
+    .coming-soon.style-2 .logo-bg {
+        margin-bottom: 40px;
+    }
+    /******************** RESERVATION **********************/
+
+    .taste-of-fresh .title {
+        font-size: 2.8rem;
+    }
+    .taste-of-fresh .title .name-2 {
+        font-size: 26px;
+    }
+    /******************** LIST MENU **********************/
+
+    .menu-items.style-2 .item-content {
+        padding: 0;
+    }
+    /********************* BLOG ***********************/
+
+    .blog-author {
+        background-color: #f9f9f9;
+    }
+    .blog-author .media-left {
+        width: auto;
+        padding: 20px;
+
+        vertical-align: top;
+    }
+    .blog-author .media-right {
+        display: block;
+
+        width: 100%;
+        padding: 0 20px 20px 20px;
+    }
+    .blog-author .media-right:before {
+        display: none;
+    }
+    .blog-comment .comment-list .parent {
+        margin-bottom: 20px;
+        padding: 20px;
+
+        background-color: #f9f9f9;
+    }
+    .blog-comment .comment-list .comment-list-children {
+        margin-left: 0;
+    }
+    .blog-comment .comment-list .comment-item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .leave-comment {
+        margin-top: 50px;
+    }
+    .leave-comment .comment-form .col-50 {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0 !important;
+    }
+    .leave-comment .comment-form .col-50:last-child {
+        margin-bottom: 0;
+    }
+    /********************* CONTACT ***********************/
+
+    .contact-form .col-sm-4 {
+        margin-bottom: 20px;
+    }
+    .contact-form .form-textarea {
+        margin-top: 20px;
+    }
+    /******************** EVENT **********************/
+
+    .logo-bg.style-2,
+    .logo-bg.style-3 {
+        min-height: 260px;
+    }
+    /********************* 404 ***********************/
+
+    .page-404 .title {
+        font-size: 4.2rem;
+
+        margin-bottom: 20px;
+    }
+}
+
+/*----------  1.6. Media screen max width 414px  ----------*/
+
+@media screen and (max-width: 414px) {
+    /********************* HOME PAGE ***********************/
+
+    .banner-prallax .title-bg {
+        font-size: 5rem;
+    }
+    .open-hours-bg .open-hours-wrapper .content .item .day:after {
+        display: none;
+    }
+    .banner-prallax .title-bg {
+        top: 40%;
+
+        margin-top: -50px;
+    }
+    .banner-prallax .infomation-wrapper {
+        top: 35%;
+    }
+    .coming-soon-event-wrapper .coming-soon-count {
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+    .coming-soon-event-wrapper .coming-soon-count .count-wrapper {
+        padding: 0 10px;
+    }
+    .logo-bg .list-logo {
+        padding: 30px 0;
+    }
+    /********************* BLOG ***********************/
+
+    .blog-post .blog-image {
+        margin-bottom: 20px;
+    }
+    .blog-detail-content .content .title {
+        font-size: 1.6rem;
+    }
+    /********************* LIST MENU ***********************/
+
+    .content-menu .tab-pane .col-xs-6 {
+        width: 100%;
+    }
+    .main-menu .content-menu .col-md-4:nth-last-child(-n + 2) .menu-items.style-4 {
+        margin-bottom: 30px;
+    }
+    .main-menu .content-menu .col-md-4:last-child .menu-items.style-4 {
+        margin-bottom: 0;
+    }
+    /******************** EVENT **********************/
+
+    /******************** GALLERY **********************/
+
+    .grid-item-wrapper {
+        width: 100%;
+    }
+    .gallery-wrapper .tab-menu li {
+        width: 33%;
+    }
+    .gallery-wrapper .tab-menu li:nth-last-child(-n+3) {
+        margin-bottom: 0;
+    }
+    .gallery-wrapper .tab-menu li:nth-last-child(-n+3) .name {
+        padding-bottom: 0;
+
+        border: none;
+    }
+}
+
+/*----------  1.7. Media screen max width 380px  ----------*/
+
+@media screen and (max-width: 380px) {
+    /********************* HOME PAGE ***********************/
+
+    .homepage-default .homepage-banner-content .group-title .title {
+        font-size: 2.6rem;
+    }
+    .background-video .homepage-banner-content {
+        padding: 0 15px;
+    }
+    .background-video .homepage-banner-content .group-title {
+        width: 100%;
+    }
+    .background-video .homepage-banner-content .group-title .title {
+        font-size: 2.6rem;
+    }
+    .header-topbar .topbar-left > li {
+        padding: 0 7px;
+    }
+    .coming-soon-event-wrapper .coming-soon-count .count-wrapper .time .count {
+        font-size: 4.2rem;
+    }
+    .dish .box {
+        height: 420px;
+    }
+    .menu-items.style-1 {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+    .menu-of-day .content-menu .col-sm-6:nth-last-child(-n + 2) .menu-items.style-1 {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+    .menu-of-day .content-menu .col-sm-6:last-child .menu-items.style-1 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .new-of-day .list-news .item .images {
+        margin-bottom: 20px;
+    }
+    .open-hours-bg .open-hours-wrapper .content {
+        margin-top: 25px;
+    }
+    .open-hours-bg .open-hours-wrapper .content .item {
+        font-size: 14px;
+
+        padding: 0;
+    }
+    .mb-nav {
+        padding: 20px 10px 0 10px;
+    }
+    .wrapper-menu-mobile .mb-social-wrapper {
+        padding: 15px;
+        padding-left: 5px;
+    }
+    .footer-wrapper .widget .title {
+        padding-bottom: 10px;
+    }
+    .footer-wrapper .widget .content-widget {
+        margin-top: 20px;
+    }
+    .social-footer {
+        display: none;
+    }
+    /******************** HOME PAGE 2 **********************/
+
+    .testimonial.style-2 .testimonial-list .testimonial-item .news-content:after {
+        font-size: 5rem;
+    }
+    .pagination li .btn-pagination {
+        line-height: 32px;
+
+        width: 32px;
+        height: 32px;
+    }
+    /******************** HOME PAGE 3 **********************/
+
+    .background-slide .homepage-banner-content .group-title .title,
+    .background-slide .homepage-banner-content .group-title-2 .title {
+        font-size: 2.6rem;
+    }
+    .menu-items.style-3 .title .name {
+        width: calc(100% - 50px);
+    }
+    /******************** LIST MENU **********************/
+
+    .menu-items.style-2 .title .name {
+        width: calc(100% - 50px);
+    }
+    /******************** BLOG **********************/
+
+    .blog-post blockquote .quote-wrapper {
+        padding-left: 10px;
+    }
+    .blog-post blockquote .icons {
+        font-size: 6rem;
+        line-height: 60px;
+    }
+    .blog-comment .comment-list .comment-left {
+        width: 50px;
+    }
+    .blog-comment .comment-list .comment-right {
+        padding-left: 60px;
+    }
+    /******************** EVENT **********************/
+
+    .logo-bg.style-2,
+    .logo-bg.style-3 {
+        min-height: 220px;
+    }
+}
+
+/*----------  1.8. Media screen max width 320px  ----------*/
+
+@media screen and (max-width: 320px) {
+    /********************* HOME PAGE ***********************/
+
+    .header-topbar {
+        display: none;
+    }
+    .homepage-default .homepage-banner-content {
+        padding-top: 60px;
+    }
+    .banner-prallax .title-bg {
+        top: 25%;
+
+        margin-top: 0;
+    }
+    .banner-prallax .infomation-wrapper .title {
+        font-size: 2rem;
+    }
+    .open-hours-bg .open-hours-wrapper {
+        padding: 50px 25px;
+    }
+    .open-hours-bg .open-hours-wrapper:before {
+        top: 18px;
+        right: 10px;
+        bottom: 18px;
+        left: 10px;
+    }
+    .coming-soon-event-wrapper .coming-soon-count .count-wrapper .time-label {
+        font-size: 1.2rem;
+
+        width: 58px;
+        margin-left: -29px;
+    }
+    .mb-nav {
+        padding: 20px 5px 0 5px;
+    }
+    /********************* HOME PAGE 2 *********************/
+
+    .menu-items.style-2 .item-image {
+        display: block;
+        float: inherit !important;
+
+        width: 100%;
+        margin: 0 auto !important;
+    }
+    .menu-items.style-2 .item-content {
+        width: 100%;
+        margin-top: 20px;
+    }
+    /******************** LIST MENU **********************/
+
+    .meal-wrapper .more-image img {
+        max-width: 70%;
+    }
+    /********************* 404 ***********************/
+
+    .page-404 {
+        min-height: 568px;
+    }
+    .page-404 .title {
+        font-size: 3.6rem;
+
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+}
